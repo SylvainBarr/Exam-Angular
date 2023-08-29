@@ -13,6 +13,7 @@ import { CharacterNewComponent } from './view/character-new/character-new.compon
 import { CharacterFormComponent } from './component/character-form/character-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     NotFoundComponent,
     CharacterEditComponent,
     CharacterNewComponent,
-    CharacterFormComponent
+    CharacterFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

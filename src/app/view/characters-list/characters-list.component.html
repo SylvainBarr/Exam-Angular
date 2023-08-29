@@ -1,6 +1,8 @@
+
+
 <div class="my-3 d-flex flex-row justify-content-center">
   <div class="col-lg-6 col-sm-12">
-    <div class="input-group position-relative">
+    <div class="input-group position-relative bg-light rounded">
       <input type="search"
              class="search-area form-control border-dark"
              (keyup)="onChangeSearch()">
@@ -11,23 +13,24 @@
         <option value="gender">Gender</option>
         <option value="status">Status</option>
       </select>
-      <div class="position-absolute top-0 end-0 h-100 ratio-1x1 pe-2 pt-2">
-        &#9660;
+      <div class="position-absolute top-0 end-0 h-100 ratio-1x1 pe-2 pt-1">
+        <i class="fa-solid fa-caret-down fa-xl"></i>
       </div>
       </div>
   </div>
 </div>
-
-
+<div class="container px-5 my-3 text-end">
+  <a [routerLink]="['/','characters','new']" class="me-lg-5 btn btn-outline-light border-2"><i class="fa-solid fa-circle-plus fa-xl"></i><b> NEW CHARACTER</b></a>
+</div>
 <div class="row row-cols-lg-5 row-cols-sm-1 my-2 row-gap-3 column-gap-3 justify-content-center">
 
-  <div class="card col bg-primary-subtle pt-2"
+  <div class="card character-card col pt-2 border-light"
        *ngFor="let character of charactersList">
     <a [routerLink]="['/','characters',character.id]"
-       class="link-underline link-underline-opacity-0 text-primary-emphasis">
+       class="link-underline link-underline-opacity-0 text-light">
       <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
 
-      <div class="card-body">
+      <div class="card-body bg-transparent">
         <h5 class="card-title">{{character.name}} (id: {{character.id}})</h5>
         <p class="card-text mb-0 pb-0">
           Status : {{character.status}}
@@ -46,10 +49,10 @@
 
 </div>
 
-<div class="text-center">
-  <a class="btn btn-outline-primary mx-1" *ngIf="actualPage >2" [routerLink]="['/','characters','page','1']">First</a>
-  <a class="btn btn-outline-primary mx-1" *ngIf="prev"
-     [routerLink]="['/','characters','page',(actualPage-1)]">&larr;</a>
-  <a class="btn btn-outline-primary mx-1" *ngIf="next" [routerLink]="['/','characters','page',nextPage]">&rarr;</a>
-  <a class="btn btn-outline-primary mx-1" *ngIf="actualPage !== pages" [routerLink]="['/','characters','page',pages]">Last</a>
+<div class="text-center my-3 p-2">
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage >2" [routerLink]="['/','characters','page','1']"><i class="fa-solid fa-angles-left"></i></a>
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="prev"
+     [routerLink]="['/','characters','page',(actualPage-1)]">{{actualPage-1}} <i class="fa-solid fa-chevron-left"></i> </a>
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="next" [routerLink]="['/','characters','page',nextPage]"><i class="fa-solid fa-chevron-right"></i> {{nextPage}} </a>
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage !== pages" [routerLink]="['/','characters','page',pages]"><i class="fa-solid fa-angles-right"></i></a>
 </div>

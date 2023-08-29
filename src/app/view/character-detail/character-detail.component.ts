@@ -27,4 +27,9 @@ export class CharacterDetailComponent implements OnInit{
     }
   }
 
+  onClickDelete(characterId: number) {
+    this.characterService
+      .delete(characterId)
+      .then(()=>this.router.navigateByUrl('/characters'))
+  }
 }

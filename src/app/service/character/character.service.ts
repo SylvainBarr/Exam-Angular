@@ -63,4 +63,24 @@ export class CharacterService {
       }
     )
   }
+
+  create(newCharacter: Omit<Character, "id" | "location" | "url" | "origin" | "episode" | "created">) {
+    return new Promise<void>(
+      (res)=>{
+        let message = 'New character has been created'
+        console.log(message)
+        res()
+      }
+    )
+  }
+
+  delete(characterId: number) {
+    return new Promise<void>(
+      (res)=>{
+        let message = 'Character id '+characterId+' has been deleted'
+        console.log(message)
+        res()
+      }
+    )
+  }
 }
