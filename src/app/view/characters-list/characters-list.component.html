@@ -1,0 +1,52 @@
+<div class="my-3 d-flex flex-row justify-content-center">
+  <div class="col-lg-6 col-sm-12">
+    <div class="input-group">
+      <input type="search"
+             class="search-area form-control"
+             (keyup)="onChangeSearch()">
+      <select class="form-control" name="filter-select" id="filter-select">
+        <option value="">Filter by ...</option>
+        <option value="name">Name</option>
+        <option value="species">Species</option>
+        <option value="gender">Gender</option>
+        <option value="status">Status</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-lg-5 row-cols-sm-1 my-2 row-gap-3 column-gap-3 justify-content-center">
+
+  <div class="card col bg-secondary-subtle"
+       *ngFor="let character of charactersList">
+    <a [routerLink]="['/','characters',character.id]"
+       class="link-underline link-underline-opacity-0 text-primary-emphasis">
+      <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
+
+      <div class="card-body">
+        <h5 class="card-title">{{character.name}} (id: {{character.id}})</h5>
+        <p class="card-text">
+          Status: {{character.status}}
+          <br>
+          Episodes List:
+        </p>
+        <ul class="p-0">
+          <ng-container *ngFor="let episode of character.episode; index as i">
+            <li *ngIf="i < 3">{{episode}}</li>
+            <li *ngIf="i === 3">(...)</li>
+          </ng-container>
+        </ul>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<div class="text-center">
+  <a class="btn btn-outline-primary mx-1" *ngIf="actualPage >2" [routerLink]="['/','characters','page','1']">First</a>
+  <a class="btn btn-outline-primary mx-1" *ngIf="prev"
+     [routerLink]="['/','characters','page',(actualPage-1)]">&larr;</a>
+  <a class="btn btn-outline-primary mx-1" *ngIf="next" [routerLink]="['/','characters','page',nextPage]">&rarr;</a>
+  <a class="btn btn-outline-primary mx-1" *ngIf="actualPage !== pages" [routerLink]="['/','characters','page',pages]">Last</a>
+</div>
