@@ -1,24 +1,27 @@
 <div class="my-3 d-flex flex-row justify-content-center">
   <div class="col-lg-6 col-sm-12">
-    <div class="input-group">
+    <div class="input-group position-relative">
       <input type="search"
-             class="search-area form-control"
+             class="search-area form-control border-dark"
              (keyup)="onChangeSearch()">
-      <select class="form-control" name="filter-select" id="filter-select">
+      <select class="form-control border-dark rounded-end bg-transparent z-2" name="filter-select" id="filter-select">
         <option value="">Filter by ...</option>
         <option value="name">Name</option>
         <option value="species">Species</option>
         <option value="gender">Gender</option>
         <option value="status">Status</option>
       </select>
-    </div>
+      <div class="position-absolute top-0 end-0 h-100 ratio-1x1 pe-2 pt-2">
+        &#9660;
+      </div>
+      </div>
   </div>
 </div>
 
 
 <div class="row row-cols-lg-5 row-cols-sm-1 my-2 row-gap-3 column-gap-3 justify-content-center">
 
-  <div class="card col bg-secondary-subtle"
+  <div class="card col bg-primary-subtle pt-2"
        *ngFor="let character of charactersList">
     <a [routerLink]="['/','characters',character.id]"
        class="link-underline link-underline-opacity-0 text-primary-emphasis">
@@ -26,12 +29,12 @@
 
       <div class="card-body">
         <h5 class="card-title">{{character.name}} (id: {{character.id}})</h5>
-        <p class="card-text">
-          Status: {{character.status}}
+        <p class="card-text mb-0 pb-0">
+          Status : {{character.status}}
           <br>
-          Episodes List:
+          Appearances :
         </p>
-        <ul class="p-0">
+        <ul class="mb-0">
           <ng-container *ngFor="let episode of character.episode; index as i">
             <li *ngIf="i < 3">{{episode}}</li>
             <li *ngIf="i === 3">(...)</li>

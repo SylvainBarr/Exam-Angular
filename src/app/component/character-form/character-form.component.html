@@ -1,1 +1,48 @@
-<p>character-form works!</p>
+<div class="row col-6 card shadow mx-auto mt-3">
+
+  <h3 class="text-center mt-3">{{title}}</h3>
+
+  <form [formGroup]="characterForm" (ngSubmit)="onSubmitForm()" class="my-3">
+
+    <div class="mb-3">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="mb-3">
+      <label for="status">Status</label>
+      <input id="status" formControlName="status" class="form-control" placeholder="Status">
+    </div>
+
+    <div class="mb-3">
+      <label for="species">Species</label>
+      <textarea id="species" formControlName="species" class="form-control" placeholder="Species"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="type">Type</label>
+      <textarea id="type" formControlName="type" class="form-control" placeholder="Type"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="gender">Gender</label>
+      <textarea id="gender" formControlName="gender" class="form-control" placeholder="Gender"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="image">Image</label>
+      <textarea id="image" formControlName="image" class="form-control" placeholder="Image"></textarea>
+    </div>
+
+
+
+    <button type="submit" class="d-grid col-4 mx-auto btn btn-primary" [disabled]="characterForm.invalid">
+      {{labelBtn}}
+    </button>
+  </form>
+
+  <a routerLink="/" class="text-center text-dark mb-2">
+    BACK
+  </a>
+
+</div>

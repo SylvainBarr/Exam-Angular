@@ -1,1 +1,7 @@
-<p>character-edit works!</p>
+<app-character-form
+  *ngIf="characterToUpdate"
+  title="UPDATE"
+  labelBtn="SEND"
+  (formSubmitted)="onHandleFormSubmitted($event)"
+  [characterToUpdate]="characterToUpdate"
+></app-character-form>

@@ -41,7 +41,7 @@ export namespace Character{
       origin: characterHttp.origin,
       location: characterHttp.location,
       image: characterHttp.image,
-      episode: characterHttp.episode,
+      episode: characterHttp.episode.map(episode => 'Episode '+episode.split('https://rickandmortyapi.com/api/episode/')[1]),
       url: characterHttp.url,
       created: characterHttp.created,
     }

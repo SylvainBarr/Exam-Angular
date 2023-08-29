@@ -53,4 +53,14 @@ export class CharacterService {
           ))
     )
   }
+
+  update(id: number, characterUpdated: Omit<Character, "id" | "location" | "url" | "origin" | "episode" | "created">) {
+    return new Promise<void>(
+      (res)=>{
+        let message = 'Character id '+id+' has been updated'
+        console.log(message)
+        res()
+      }
+    )
+  }
 }

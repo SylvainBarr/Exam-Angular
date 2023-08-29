@@ -1,1 +1,19 @@
-<p>character-detail works!</p>
+<div *ngIf="character$ | async as character" class="row col-6 card shadow mx-auto mt-5">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{character.id}} - {{character.name}}</h5>
+    <img [src]="character.image" class="card-img-top">
+    <div class="text-start">
+      <p>Status : {{character.status}}</p>
+      <p>Species : {{character.species}}</p>
+      <p>Gender : {{character.gender}}</p>
+      <p *ngIf="character.type">Type : {{character.type}}</p>
+      <p>Origin : {{character.origin.name}}</p>
+      <p>Created : {{character.created}}</p>
+      <p>Appearances : </p>
+      <ul>
+        <li *ngFor="let episode of character.episode">{{episode}}</li>
+      </ul>
+    </div>
+    <button routerLink="/" class="btn btn-primary mt-2">BACK</button>
+  </div>
+</div>

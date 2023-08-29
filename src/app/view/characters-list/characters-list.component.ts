@@ -45,7 +45,6 @@ export class CharactersListComponent implements OnInit, OnDestroy{
           this.pages = response.pages
           this.prev = response.prev
           this.next = response.next
-          console.log(this.next, this.prev)
         })
       })
 
@@ -69,7 +68,6 @@ export class CharactersListComponent implements OnInit, OnDestroy{
           this.pages = response.pages
           this.prev = response.prev
           this.next = response.next
-          console.log(this.next, this.prev)
         })
       }
     }else{
@@ -89,7 +87,6 @@ export class CharactersListComponent implements OnInit, OnDestroy{
             this.pages = response.pages
             this.prev = response.prev
             this.next = response.next
-            console.log(this.next, this.prev)
           })
         })
     }
