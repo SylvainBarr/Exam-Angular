@@ -67,6 +67,10 @@ export class CharacterService {
     )
   }
 
+
+  /*
+  * Function called when the admin wants to update datas on a character (actually just does a console log)
+   */
   update(id: number, characterUpdated: Omit<Character, "id" | "location" | "url" | "origin" | "episode" | "created">) {
     return new Promise<void>(
       (res)=>{
@@ -77,6 +81,9 @@ export class CharacterService {
     )
   }
 
+  /*
+  * Function called when the admin wants to create a new character (actually just does a console log)
+   */
   create(newCharacter: Omit<Character, "id" | "location" | "url" | "origin" | "episode" | "created">) {
     return new Promise<void>(
       (res)=>{
@@ -87,6 +94,9 @@ export class CharacterService {
     )
   }
 
+  /*
+  * Function called when the admin wants to delete a character (actually just does a console log)
+   */
   delete(characterId: number) {
     return new Promise<void>(
       (res)=>{

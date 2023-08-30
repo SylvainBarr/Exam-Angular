@@ -57,7 +57,7 @@ export class CharactersListComponent implements OnInit, OnDestroy{
   }
 
   /**
-   * function that get the values of the filter select and the search area.
+   * function that get the values of the filter select and the search input.
    * It verifies if the user typed at least three characters and selected a filter,
    * then calls the character service to make the right request to the API
    *

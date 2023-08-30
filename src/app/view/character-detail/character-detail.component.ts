@@ -19,14 +19,21 @@ export class CharacterDetailComponent implements OnInit{
   ) { }
 
   ngOnInit() {
+    // get the id on the URL
     const id = this.route.snapshot.paramMap.get('id');
     if(id){
+      // get the character if there is an id
       this.character$ = this.characterService.getById(parseInt(id))
     }else{
       this.router.navigateByUrl('/characters')
     }
   }
 
+
+  /*
+  * Function called when the delete button is clicked by the user,
+  * send the character id as parameter to the delete function to the Character Service
+   */
   onClickDelete(characterId: number) {
     this.characterService
       .delete(characterId)
