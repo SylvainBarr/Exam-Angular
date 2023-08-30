@@ -1,10 +1,10 @@
 <div class="my-3 d-flex flex-row justify-content-center">
   <div class="col-lg-6 col-sm-12">
-    <div class="input-group position-relative bg-light rounded">
+    <div class="input-group position-relative bg-light rounded border border-info border-2">
       <input type="search"
-             class="search-area form-control border-dark"
+             class="search-area form-control"
              (keyup)="onChangeSearch()">
-      <select class="form-control border-dark rounded-end bg-transparent z-2" name="filter-select" id="filter-select">
+      <select class="form-control rounded-end bg-transparent z-2" name="filter-select" id="filter-select">
         <option value="">Search by ...</option>
         <option value="name">Name</option>
         <option value="species">Species</option>
@@ -57,6 +57,6 @@
   <p class="text-light mx-2 my-auto" style="font-size: 1.2rem"> {{actualPage}} </p>
   <a class="btn btn-outline-light mx-1 border-2 " *ngIf="next" [routerLink]="['/','characters','page',nextPage]"><i
     class="fa-solid fa-chevron-right"></i> {{nextPage}} </a>
-  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage < pages"
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage < (pages-1)"
      [routerLink]="['/','characters','page',pages]"><i class="fa-solid fa-angles-right"></i></a>
 </div>

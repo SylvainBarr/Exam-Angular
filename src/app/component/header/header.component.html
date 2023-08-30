@@ -17,6 +17,7 @@
 
           <ng-container *ngIf="token$ | async">
             <img src="https://pyxis.nymag.com/v1/imgs/3b7/ca7/5fd3353737d602a5a1caa3fce92cb33b39-rick-morty.1x.rsquare.w1400.jpg" alt="profile picture" width="50" height="50" class="rounded-circle mx-2 border-dark border-2 border">
+            <span class="me-3">Admin</span>
             <button (click)="onClickLogout()" class="btn btn-outline-dark mx-1"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
           </ng-container>
         </div>

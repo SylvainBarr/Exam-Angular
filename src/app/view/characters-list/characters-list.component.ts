@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Character} from "../../model/character.model";
-import {BehaviorSubject, Observable, Subscription} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {CharacterService} from "../../service/character/character.service";
 import {AuthService} from "../../service/auth/auth.service";
 import {ActivatedRoute} from "@angular/router";
