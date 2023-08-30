@@ -16,25 +16,23 @@
 
     <div class="mb-3">
       <label for="species">Species</label>
-      <textarea id="species" formControlName="species" class="form-control" placeholder="Species"></textarea>
+      <input id="species" formControlName="species" class="form-control" placeholder="Species">
     </div>
 
     <div class="mb-3">
       <label for="type">Type</label>
-      <textarea id="type" formControlName="type" class="form-control" placeholder="Type"></textarea>
+      <input id="type" formControlName="type" class="form-control" placeholder="Type">
     </div>
 
     <div class="mb-3">
       <label for="gender">Gender</label>
-      <textarea id="gender" formControlName="gender" class="form-control" placeholder="Gender"></textarea>
+      <input id="gender" formControlName="gender" class="form-control" placeholder="Gender">
     </div>
 
     <div class="mb-3">
       <label for="image">Image</label>
-      <textarea id="image" formControlName="image" class="form-control" placeholder="Image"></textarea>
+      <input id="image" formControlName="image" class="form-control" placeholder="Image">
     </div>
-
-
 
     <button type="submit" class="d-grid col-4 mx-auto btn btn-primary" [disabled]="characterForm.invalid">
       {{labelBtn}}
