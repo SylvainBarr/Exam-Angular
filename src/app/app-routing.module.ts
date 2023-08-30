@@ -11,7 +11,7 @@ import {NotFoundComponent} from "./view/not-found/not-found.component";
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'characters'},
   {path: 'login', component: LoginComponent},
-  {path: 'characters',  children: [
+  {path: 'characters',canActivate: [authGuard], children: [
       {path: '', component: CharactersListComponent},
       {path: 'page/:page', component: CharactersListComponent},
       {path: 'new', component: CharacterNewComponent},

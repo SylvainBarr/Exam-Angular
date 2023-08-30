@@ -1,5 +1,5 @@
 <div *ngIf="character$ | async as character" class="row col-6 card shadow mx-auto mt-5">
-  <div class="card-body text-center">
+  <div class="card-body text-center bg-main border border-2 border-light rounded">
     <h5 class="card-title">{{character.id}} - {{character.name}}</h5>
     <img [src]="character.image" class="card-img-top mb-3">
     <div class="text-start">
@@ -7,17 +7,17 @@
         <a routerLink="edit" class="btn btn-outline-success mb-1"><i class="fa-solid fa-pen-to-square fa-xl"></i> EDIT</a>
         <button (click)="onClickDelete(character.id)" class="btn btn-outline-danger"><i class="fa-solid fa-trash fa-xl"></i> DELETE</button>
       </div>
-      <p>Status : {{character.status}}</p>
-      <p>Species : {{character.species}}</p>
-      <p>Gender : {{character.gender}}</p>
-      <p *ngIf="character.type">Type : {{character.type}}</p>
-      <p>Origin : {{character.origin.name}}</p>
-      <p>Created : {{character.created}}</p>
-      <p>Appearances : </p>
+      <p><span class="line-title">Status :</span> {{character.status}}</p>
+      <p><span class="line-title">Species :</span> {{character.species}}</p>
+      <p><span class="line-title">Gender :</span> {{character.gender}}</p>
+      <p *ngIf="character.type"><span class="line-title">Type :</span> {{character.type}}</p>
+      <p><span class="line-title">Origin :</span> {{character.origin.name}}</p>
+      <p><span class="line-title">Created :</span> {{character.created}}</p>
+      <p><span class="line-title">Appearances :</span> </p>
       <ul>
         <li *ngFor="let episode of character.episode">{{episode}}</li>
       </ul>
     </div>
-    <button routerLink="/" class="btn btn-primary mt-2">BACK</button>
+    <button routerLink="/" class="btn btn-outline-dark mt-2">BACK</button>
   </div>
 </div>

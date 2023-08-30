@@ -1,5 +1,3 @@
-
-
 <div class="my-3 d-flex flex-row justify-content-center">
   <div class="col-lg-6 col-sm-12">
     <div class="input-group position-relative bg-light rounded">
@@ -7,7 +5,7 @@
              class="search-area form-control border-dark"
              (keyup)="onChangeSearch()">
       <select class="form-control border-dark rounded-end bg-transparent z-2" name="filter-select" id="filter-select">
-        <option value="">Filter by ...</option>
+        <option value="">Search by ...</option>
         <option value="name">Name</option>
         <option value="species">Species</option>
         <option value="gender">Gender</option>
@@ -16,11 +14,12 @@
       <div class="position-absolute top-0 end-0 h-100 ratio-1x1 pe-2 pt-1">
         <i class="fa-solid fa-caret-down fa-xl"></i>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 <div class="container px-5 my-3 text-end">
-  <a [routerLink]="['/','characters','new']" class="me-lg-5 btn btn-outline-light border-2"><i class="fa-solid fa-circle-plus fa-xl"></i><b> NEW CHARACTER</b></a>
+  <a [routerLink]="['/','characters','new']" class="me-lg-5 btn btn-outline-light border-2"><i
+    class="fa-solid fa-circle-plus fa-xl"></i><b> NEW CHARACTER</b></a>
 </div>
 <div class="row row-cols-lg-5 row-cols-sm-1 my-2 row-gap-3 column-gap-3 justify-content-center">
 
@@ -31,7 +30,7 @@
       <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
 
       <div class="card-body bg-transparent">
-        <h5 class="card-title">{{character.name}} (id: {{character.id}})</h5>
+        <h5 class="card-title">{{character.name}} ({{character.id}})</h5>
         <p class="card-text mb-0 pb-0">
           Status : {{character.status}}
           <br>
@@ -49,10 +48,15 @@
 
 </div>
 
-<div class="text-center my-3 p-2">
-  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage >2" [routerLink]="['/','characters','page','1']"><i class="fa-solid fa-angles-left"></i></a>
+<div class="my-3 p-2 d-flex flex-row justify-content-center">
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage >2" [routerLink]="['/','characters','page','1']"><i
+    class="fa-solid fa-angles-left"></i></a>
   <a class="btn btn-outline-light mx-1 border-2 " *ngIf="prev"
-     [routerLink]="['/','characters','page',(actualPage-1)]">{{actualPage-1}} <i class="fa-solid fa-chevron-left"></i> </a>
-  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="next" [routerLink]="['/','characters','page',nextPage]"><i class="fa-solid fa-chevron-right"></i> {{nextPage}} </a>
-  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage !== pages" [routerLink]="['/','characters','page',pages]"><i class="fa-solid fa-angles-right"></i></a>
+     [routerLink]="['/','characters','page',(actualPage-1)]">{{actualPage - 1}} <i class="fa-solid fa-chevron-left"></i>
+  </a>
+  <p class="text-light mx-2 my-auto" style="font-size: 1.2rem"> {{actualPage}} </p>
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="next" [routerLink]="['/','characters','page',nextPage]"><i
+    class="fa-solid fa-chevron-right"></i> {{nextPage}} </a>
+  <a class="btn btn-outline-light mx-1 border-2 " *ngIf="actualPage < pages"
+     [routerLink]="['/','characters','page',pages]"><i class="fa-solid fa-angles-right"></i></a>
 </div>

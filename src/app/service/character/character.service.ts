@@ -14,6 +14,11 @@ export class CharacterService {
     this.baseApiUrl = Environment.API_URL
   }
 
+  /*
+  * function that calls the API to get a promise with a list of all the characters,
+  * the number of pages, the url to request the next page and the url to request the previous page
+  * it also transform the characters as we decided in the character model
+   */
   getAll(page: number = 1): Promise<{ characters:  Character[], pages: number, next: string|null, prev: string|null}>{
     return firstValueFrom(
       this.http
@@ -29,6 +34,10 @@ export class CharacterService {
     )
   }
 
+
+  /*
+  * Request the API to get the details of one character based on his ID
+   */
   getById(characterId: number): Promise<Character>{
     return firstValueFrom(
       this.http
@@ -39,6 +48,10 @@ export class CharacterService {
     )
   }
 
+
+  /*
+  * Request the API to get all character based on the filter(string) send on parameter (example: '?name=rick')
+   */
   getFiltered(filter: string): Promise<{ characters:  Character[], pages: number, next: string|null, prev: string|null}>{
     return firstValueFrom(
       this.http

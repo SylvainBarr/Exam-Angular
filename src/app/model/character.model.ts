@@ -11,7 +11,7 @@ export interface CharacterHttp{
   image: string
   episode: string[]
   url: string
-  created: Date
+  created: string
 }
 
 export interface Character {
@@ -26,7 +26,7 @@ export interface Character {
   image: string
   episode: string[]
   url: string
-  created: Date
+  created: string
 }
 
 export namespace Character{
@@ -43,7 +43,7 @@ export namespace Character{
       image: characterHttp.image,
       episode: characterHttp.episode.map(episode => 'Episode '+episode.split('https://rickandmortyapi.com/api/episode/')[1]),
       url: characterHttp.url,
-      created: characterHttp.created,
+      created: characterHttp.created.split('T')[0]
     }
   }
 }
